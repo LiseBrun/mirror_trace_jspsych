@@ -1,0 +1,63 @@
+.custom-title {
+	font-family: 'Slabo 27px', serif;
+}
+
+.jspsych-display-element {
+	font-family: 'Questrial', sans-serif;
+}
+
+.instructions {
+	width: 600px;
+    text-align: justify;
+}
+
+.continue-instructions {
+	margin-right: 5%;
+	color: grey;
+}
+
+.key {
+	font-weight: bold;
+}
+.iat-category {
+	font-weight: bold;
+}
+
+.iat-important {
+	/*background-color: yellow;*/
+	text-decoration: underline;
+}
+
+.iat-progress{
+	text-align: center;
+	font-family: 'Slabo 27px', serif;
+}
+
+.iat-category{
+	font-weight:bold;
+}
+
+.iat-instructions {
+	position: absolute;
+	
+}
+
+.vaast-table-instruction {
+	width: 600 px;
+}
+
+.vaast-movement-instructions {
+	font-weight: bold;
+}
+
+/*iat stimulus color*/
+
+.self-other {
+	color:#000000;
+	font-weight: bold;
+}
+
+.luupite-niffite {
+	color: #009000;
+	font-weight: bold;
+}

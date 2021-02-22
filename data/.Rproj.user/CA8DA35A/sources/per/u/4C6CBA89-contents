@@ -1,0 +1,19 @@
+library(tidyverse)
+theme_set(hrbrthemes::theme_ipsum())
+
+data_analysis <-
+  read_rds("data/data_analysis.Rdata")
+
+data_analysis %>% 
+  ggplot(aes(x = cond_approach_training, y = D2)) +
+  ggbeeswarm::geom_quasirandom(width = .1) +
+  stat_summary(fun.data = mean_cl_normal, position = position_nudge(x = .3)) +
+  geom_hline(yintercept = 0) +
+  labs(y = "D2\n(self-luupite - self-niffite)",
+       x = "Approached stimulus") 
+
+lm(D2 ~ cond_approach_training, data_analysis) %>% 
+  summary()
+
+MBESS::smd(filter(data_analysis, cond_approach_training == "luupite") %>%  pull(D2),
+           filter(data_analysis, cond_approach_training == "niffite") %>%  pull(D2))

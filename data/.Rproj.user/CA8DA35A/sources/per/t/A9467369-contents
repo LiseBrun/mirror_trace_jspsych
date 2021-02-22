@@ -1,0 +1,81 @@
+# packages ----------------------------------------------------------------
+library(tidyverse)
+
+# building tidy dataset ---------------------------------------------------
+# prolific info
+prolific <- 
+  read_csv("data/dataset_prolific.csv") %>% 
+  rename(prolific_session_id = session_id,
+         prolific_id = participant_id)
+
+# meta infos
+browser_event <- 
+  read_rds("data/dataset_browser_event.RData") %>% 
+  add_count(session_id) %>% 
+  select(session_id, 
+         n,
+         timestamp,
+         event) %>% 
+  nest(timestamp, event,
+       .key = "event_log") %>% 
+  rename(event = n)
+
+connections <-
+  read_rds("data/dataset_connection.RData") %>% 
+  add_count(session_id) %>% 
+  select(session_id, 
+         n,
+         timestamp,
+         status) %>% 
+  nest(timestamp, status,
+       .key = "connection_log") %>% 
+  rename(connection = n)
+
+# vaast
+vaast <-
+  read_rds("data/dataset_vaast_trial.RData") %>% 
+  select(-epoch) %>% 
+  add_count(session_id) %>%
+  mutate(n = n / 3) %>% 
+  group_by(session_id, n) %>% 
+  nest() %>% 
+  rename(vaast_trial = n,
+         vaast_data = data)
+
+# iat 
+iat <-
+  read_rds("data/dataset_iat_trial.RData") %>% 
+  select(-epoch) %>% 
+  add_count(session_id) %>% 
+  group_by(session_id, n) %>% 
+  nest() %>% 
+  rename(iat_trial = n,
+         iat_data = data)
+
+# extra 
+extra <-
+  read_rds("data/dataset_extra.RData.")
+
+dataset_tidy <-
+  read_rds("data/dataset_participant.RData") %>%
+  select(-epoch,
+         -timestamp) %>%
+  mutate(is_duplicated = duplicated(prolific_id)) %>%
+  left_join(browser_event, by = "session_id") %>%
+  full_join(connections, by = "session_id") %>% 
+  left_join(vaast, by = "session_id") %>% 
+  left_join(iat, by = "session_id") %>% 
+  left_join(extra, by = "session_id") %>% 
+  full_join(prolific, by = "prolific_id")
+
+write_rds(dataset_tidy, "data/dataset_tidy.RData")  
+
+dataset_tidy %>% 
+  select_if(is_not_list) %>%  
+  write_rds("data/dataset_tidy_summary.RData")
+
+is_not_list <- 
+  function(x) {
+    !is.list(x)
+  }
+

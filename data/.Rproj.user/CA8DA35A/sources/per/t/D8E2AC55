@@ -1,0 +1,26 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1539974722649.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "2515360556",
+    "id" : "D8E2AC55",
+    "lastKnownWriteTime" : 1539975371,
+    "last_content_update" : 1539975371948,
+    "path" : "C:/CedricLocal/Dropbox/new/scripts/jsPsych-scripts/20190222_ostracisme-aat_mae/data/5_demographics.R",
+    "project_path" : "5_demographics.R",
+    "properties" : {
+        "cursorPosition" : "12,0",
+        "scrollLine" : "0",
+        "tempName" : "Untitled3"
+    },
+    "read_only" : false,
+    "read_only_alternatives" : [
+    ],
+    "relative_order" : 6,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}
