@@ -129,7 +129,7 @@ if(!is_compatible) {
 // Lise line tracing
 
 var line_trace = function() {
-  
+
     var materials = {
     		'mirror' : [false],
     		'file_names' : [
@@ -1326,7 +1326,6 @@ var timeline = [];
 
 // fullscreen
 timeline.push(welcome,
-              line_tracing,
               fullscreen_trial,
           		hiding_cursor);
 
