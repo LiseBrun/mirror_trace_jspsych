@@ -50,7 +50,7 @@ if(!is_compatible) {
   var jspsych_id = jsPsych.randomization.randomID(15)
 
   // Preload images
-  var preloadimages = ['figures/p1e.png',
+  var preloadimages = ['figures/s0e.png',
                        'media/vaast-background.png',
                        'media/keyboard-vaast-tgb3.png',
                        'stimuli/diamond_instructions.png',
