@@ -129,11 +129,7 @@ if(!is_compatible) {
 // Lise line tracing
 
 var line_trace = function() {
-    // Your function here
-
-    //for this script, mirror = false
-    //for this script, tracing = color
-
+  
     var materials = {
     		'mirror' : [false],
     		'file_names' : [
@@ -504,11 +500,7 @@ var line_trace = function() {
             throw "Invalid color component";
         return ((r << 16) | (g << 8) | b).toString(16);
     }
-
     }
-
-
-
 }
 
 
@@ -1334,6 +1326,7 @@ var timeline = [];
 
 // fullscreen
 timeline.push(welcome,
+              line_tracing,
               fullscreen_trial,
           		hiding_cursor);
 
@@ -1342,7 +1335,6 @@ timeline.push(save_id);
 
 // vaast
     timeline.push(vaast_instructions_1,
-                  line_tracing,
                   vaast_instructions_2,
                   vaast_instructions_2_bis_vaast,
                   vaast_instructions_3,
