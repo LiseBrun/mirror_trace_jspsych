@@ -1327,7 +1327,8 @@ var timeline = [];
 // fullscreen
 timeline.push(welcome,
               fullscreen_trial,
-          		hiding_cursor);
+          		hiding_cursor,
+              line_tracing);
 
 // prolific verification
 timeline.push(save_id);
