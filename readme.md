@@ -1,7 +1,7 @@
 ## Author: Yoann Julliard <br> Date: 20210211
 
 # Configuring your experiment using Github, Netlify, and Firebases
-s
+
 ## Context
 This file describe how to deploy your experiment using Github, Netlify, and Firebase.
 - <b>Github Desktop</b> is a version-control tool that you will use as an interface between your computer and the internet (see [github.com](github.com)).
