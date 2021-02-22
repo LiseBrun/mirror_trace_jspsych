@@ -1,27 +1,5 @@
-/// LICENCE -----------------------------------------------------------------------------
-//
-// Copyright 2018 - Cédric Batailler
-//
-// Permission is hereby granted, free of charge, to any person obtaining a copy of this
-// software and associated documentation files (the "Software"), to deal in the Software
-// without restriction, including without limitation the rights to use, copy, modify,
-// merge, publish, distribute, sublicense, and/or sell copies of the Software, and to
-// permit persons to whom the Software is furnished to do so, subject to the following
-// conditions:
-//
-// The above copyright notice and this permission notice shall be included in all copies
-// or substantial portions of the Software.
-//
-// THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED,
-// INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A
-// PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT
-// HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF
-// CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE
-// OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
-//
 // OVERVIEW -----------------------------------------------------------------------------
 //
-// TODO:
 //
 // dirty hack to lock scrolling ---------------------------------------------------------
 // note that jquery needs to be loaded.
@@ -58,18 +36,19 @@ if(!is_compatible) {
 
 // firebase initialization ---------------------------------------------------------------
   var firebase_config = {
-    apiKey: "your-api-key",
-    databaseURL: "https://your-project.firebaseio.com/"
+    apiKey: "AIzaSyCXKGqJpbHaIoE_muaG1TSnKLunbF95eLg",
+    databaseURL: "https://line-tracing-task-default-rtdb.firebaseio.com/"
   };
 
   firebase.initializeApp(firebase_config);
   var database = firebase.database();
 
-  // id variables
+  // id variables of 15 characters
   var jspsych_id = jsPsych.randomization.randomID(15)
 
   // Preload images
-  var preloadimages = ['media/vaast-background.png',
+  var preloadimages = ['figures/p1e.png',
+                       'media/vaast-background.png',
                        'media/keyboard-vaast-tgb3.png',
                        'stimuli/diamond_instructions.png',
                        'stimuli/square_instructions.png',
