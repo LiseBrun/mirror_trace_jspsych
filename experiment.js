@@ -126,28 +126,6 @@ if(!is_compatible) {
     jsPsych.init({timeline: timeline_error});
     }
 
-// Lise canvas
-var canvas_draw = function() {
-
-  var canvas_draw_var =
-    '<div id="miror_div">' +
-    '<canvas id="mirror" width="400" height="300" style="border:1px solid #000000;"></canvas>' +
-    '</div>' +
-    '<div id="sketch" >' +
-    '<canvas id="paint" width="400" height="300" style="border:1px solid #000000;"></canvas>' +
-    '</div>' +
-    '<div id="status"></div>';
-
-  document.getElementById("wrapper").innerHTML = canvas_draw_var
-}
-
-var canvas_drawing = {
-    type: 'call-function',
-    func: canvas_draw
-}
-
-// end canvas
-
 
 // Lise line tracing
 
@@ -1351,7 +1329,7 @@ var timeline = [];
 timeline.push(welcome,
               fullscreen_trial,
           		hiding_cursor,
-              canvas_drawing);
+              line_tracing);
 
 // prolific verification
 timeline.push(save_id);
