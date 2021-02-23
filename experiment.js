@@ -129,15 +129,16 @@ if(!is_compatible) {
 // Lise canvas
 var canvas_draw = function() {
 
-  var canvas_draw_var = {
+  var canvas_draw_var =
     '<div id="miror_div">' +
     '<canvas id="mirror" width="400" height="300" style="border:1px solid #000000;"></canvas>' +
     '</div>' +
     '<div id="sketch" >' +
     '<canvas id="paint" width="400" height="300" style="border:1px solid #000000;"></canvas>' +
     '</div>' +
-    '<div id="status"></div>'
-  }
+    '<div id="status"></div>';
+
+  document.getElementById("wrapper").innerHTML = canvas_draw_var
 }
 
 var canvas_drawing = {
