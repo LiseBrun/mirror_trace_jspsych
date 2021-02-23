@@ -130,7 +130,7 @@ if(!is_compatible) {
 // Lise line tracing
 
 // declare the block.
-var trial = {
+var external = {
   type:'external-html',
   url: "color_trace.html",
   cont_btn: "start"
@@ -951,9 +951,9 @@ var timeline = [];
 
 // fullscreen
 timeline.push(welcome,
+              external,
               fullscreen_trial,
-          		hiding_cursor,
-              line_tracing);
+          		hiding_cursor);
 
 // prolific verification
 timeline.push(save_id);
