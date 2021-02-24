@@ -329,3 +329,33 @@ timeline.push(instructions_1,
 
   // ending
   timeline.push(ending);
+
+  // Launch experiment --------------------------------------------------------------------
+  // preloading ---------------------------------------------------------------------------
+  // Preloading. For some reason, it appears auto-preloading fails, so using it manually.
+  // In principle, it should have ended when participants starts VAAST procedure (which)
+  // contains most of the image that have to be pre-loaded.
+  var loading_gif               = ["media/loading.gif"]
+
+  jsPsych.pluginAPI.preloadImages(loading_gif);
+
+  // timeline initiaization ---------------------------------------------------------------
+
+  if(is_compatible & is_prolific) {
+    jsPsych.init({
+        timeline: timeline,
+        preload_images: preloadimages,
+        max_load_time: 1000 * 500,
+        exclusions: {
+              min_width: 800,
+              min_height: 600,
+          },
+        on_interaction_data_update: function() {
+          saving_browser_events(completion = false);
+        },
+      on_finish: function() {
+          saving_browser_events(completion = true);
+          window.location.href = "https://app.prolific.co/submissions/complete?cc=your-completion-code";
+      }
+    });
+  }
