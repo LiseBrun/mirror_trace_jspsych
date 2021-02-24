@@ -92,18 +92,6 @@ var materials = {
 	var lastRefresh = 0;
 	var currentRefresh = 0;
 
-	// click on "enter" when they want to finish the trial
-	var press_enter = false;
-	addEventListener("keyup", function(event) {
-	 if (event.key === "Enter") {
-		 drawing = false;
-		 finished = true;
-		 //document.getElementById("status").innerHTML = "Finished with score = " + Math.round(score *100) + "%<BR> Click next to continue.";
-		 // document.getElementById("status").innerHTML = "Vous avez terminé cet essai. Cliquez sur la flèche à droite pour continuer.";
-	 }
- });
-
-
 function do_mirror() {
 	//load materials
 	var imagePath = materials.file_names[trialnumber];

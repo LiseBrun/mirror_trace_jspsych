@@ -59,6 +59,62 @@
             };
       timeline.push(instructions_2);
 
+/* materials */
+
+var materials = {
+		'mirror' : [false, false, false, false, false],
+		'file_names' : [
+			  "https://raw.githubusercontent.com/LiseBrun/mirror_trace/master/figures/s0e.png",
+				"https://raw.githubusercontent.com/LiseBrun/mirror_trace/master/figures/T0h.png",
+			  "https://raw.githubusercontent.com/LiseBrun/mirror_trace/master/figures/T1e.png",
+				"https://raw.githubusercontent.com/LiseBrun/mirror_trace/master/figures/T1h.png",
+				"https://raw.githubusercontent.com/LiseBrun/mirror_trace/master/figures/T2e.png"],
+
+  		 			'xstarts' : [57,  326, 49, 342, 153],
+  		 			'ystarts' : [146, 236, 40, 253,  51],
+  		 			'xends' :   [358,  67, 340, 52, 299],
+  		 			'yends' :   [146,  57, 205, 88, 176]
+  		 	}
+
+/* create variables */
+
+//image dimensions
+        	var mywidth = 393;
+        	var myheight = 295;
+
+        	var score = 0;
+        	var timeDiff = 0;
+        	var trialnumber = 0;
+        	var MID = 0;
+        	var drawing = false;
+        	var finished = false;
+        	var timeFinished = 0;
+        	var canvas;
+        	var ctx;
+        	var canvas_mirror;
+        	var ctx_mirror;
+        	var crossings = 0;
+        	var distance_total = 0;
+        	var distance_current = 0;
+        	var distance_inline = 0;
+        	var distance_offline = 0;
+        	var startTime = 0;
+        	var endTime = 0;
+        	var lastRefresh = 0;
+        	var currentRefresh = 0;
+
+        	// click on "enter" when they want to finish the trial
+        	var press_enter = false;
+        	addEventListener("keyup", function(event) {
+        	 if (event.key === "Enter") {
+        		 drawing = false;
+        		 finished = true;
+        		 //document.getElementById("status").innerHTML = "Finished with score = " + Math.round(score *100) + "%<BR> Click next to continue.";
+        		 // document.getElementById("status").innerHTML = "Vous avez terminé cet essai. Cliquez sur la flèche à droite pour continuer.";
+        	 }
+         });
+
+
 /* display canvas */
 
       var display_canvas = {
@@ -76,7 +132,15 @@
       };
         timeline.push(display_canvas);
 
-/* task */
+/* line tracing task */
+
+      var line_tracing_code = {function do_mirror()};
+
+      var line_tracing = {
+        type : "call-function",
+        func : do_mirror
+      };
+        timeline.push(line_tracing);
 
 
       /* start the experiment */
