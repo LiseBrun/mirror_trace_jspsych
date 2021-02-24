@@ -147,7 +147,7 @@ if(!is_compatible) {
         .push()
         .set({jspsych_id: jspsych_id,
               prolific_id: prolific_id,
-               timestamp: firebase.database.ServerValue.TIMESTAMP})
+              timestamp: firebase.database.ServerValue.TIMESTAMP})
   }
 
 // browser events -----------------------------------------------------------------------
@@ -197,7 +197,7 @@ var welcome = {
   stimulus:
     "<h1 class ='custom-title'> Welcome </h1>" +
     "<ul class='instructions'>" +
-    "In this study, you will <b>complete a task named the 'Line tracing task'</b>. Note that we " +
+    "In this study, you will <b>complete a task named the Line tracing task</b>. Note that we " +
     "will not collect any personally identifying information and that you can leave the experiment " +
     "at any moment. If you complete the experiment until the end, you will be retributed as stated on Prolific. " +
     "<b>If you decide to start this study, it means that you give your free and informed consent to participate. </b>" +
