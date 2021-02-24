@@ -79,7 +79,7 @@ if(!is_compatible) {
 
     // counter variables
       var trial_n    = 1;
-      var events_n = 1;
+      var browser_events_n = 1;
 
 // Saving blocks ------------------------------------------------------------------------
 // Every function here send the data to firebase.io. Because data sent is different
@@ -310,7 +310,7 @@ timeline.push(welcome,
               fullscreen_trial);
 
 // prolific verification
-// timeline.push(save_id);
+timeline.push(save_id);
 
 // line tracing task
 timeline.push(instructions_1,
@@ -324,7 +324,7 @@ timeline.push(instructions_1,
                 extra_information_2,
                 extra_information_3,
                 extra_information_4,
-                // save_extra);
+                save_extra);
 
   // ending
   timeline.push(ending);
