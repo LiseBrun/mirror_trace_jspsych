@@ -48,8 +48,8 @@ if(!is_compatible) {
   var jspsych_id = jsPsych.randomization.randomID(15)
 
   // Preload images
-  var preloadimages = ['figures/s0e.png',
-                       'figures/s0h.png'];
+  // var preloadimages = ['figures/s0e.png',
+  //                      'figures/s0h.png'];
 
   // identifiation --------------------------------------------------------------
   // * prolific_pid: id from Prolific. By default, it is read from url.
@@ -317,7 +317,8 @@ timeline.push(instructions_1,
               instructions_2,
               // line_tracing,
               // save_trial,
-              instructions_end);
+              instructions_end,
+              fullscreen_exit_trial);
 
  // demographic questions
   timeline.push(extra_information_1,
