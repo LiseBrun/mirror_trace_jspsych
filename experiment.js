@@ -196,7 +196,7 @@ var welcome = {
   type: "html-keyboard-response",
   stimulus:
     "<h1 class ='custom-title'> Welcome </h1>" +
-    "<ul class='instructions'>" +
+    "<p class='instructions'>" +
     "In this study, you will <b>complete a task named the Line tracing task</b>. Note that we " +
     "will not collect any personally identifying information and that you can leave the experiment " +
     "at any moment. If you complete the experiment until the end, you will be retributed as stated on Prolific. " +
@@ -204,12 +204,12 @@ var welcome = {
     "<br>" +
     "<br>" +
     "Because we rely on third party services to gather data, ad-blocking " +
-    "software might interfere with data collection. Therefore, please  " +
+    "software might interfere with data collection. Therefore, please " +
     "disable your ad-blocking software during this study. " +
     "<b>If we are unable to record your data, we will not be able to reward you for " +
     "your participation</b>. " +
     "<br>If you have any question related to this research, please " +
-    "e-mail brun.lise26@hotmail.fr. </ul>" +
+    "e-mail brun.lise26@hotmail.fr. </p>" +
     "<p class = 'continue-instructions'>Press <strong>space</strong> to start the study.</p>",
   choices: [32]
 };
@@ -228,12 +228,12 @@ var instructions_1 = {
   type: "html-keyboard-response",
   stimulus:
     "<h1 class ='custom-title'> Task 1: Line tracing task</h1>" +
-    "<p class='instructions'>In this task, you will have to reproduce</p>" +
-    "<p a figure with your mouse. In each trial, you will see two rectangular panels:</p>"+
-    "<p the drawing panel is at the bottom; this is where you will move the mouse cursor;</p>" +
-    "<p the mirror panel is at the top, this will record your mouse movements</p>" +
-    "<p as you try to trace the figure.</p>" +
-    "<p class='instructions'>Note that your complete attention is critical for this task " +
+    "<p class='instructions'>In this task, you will have to reproduce" +
+    "a figure with your mouse. In each trial, you will see two rectangular panels: "+
+    "the drawing panel is at the bottom; this is where you will move the mouse cursor; " +
+    "the mirror panel is at the top, this will record your mouse movements" +
+    "as you try to trace the figure. " +
+    "Note that your complete attention is critical for this task " +
     "<br>Note also that we monitor the time spent during the experiment and that " +
     "we will not accept submission for which the time to complete the study is unrealistic.</p>" +
     "<br><br>" +
