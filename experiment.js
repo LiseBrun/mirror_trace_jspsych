@@ -153,8 +153,8 @@ if(!is_compatible) {
 // line tracing task trial --------------------------------------------------------------------------
   var saving_trial = function(){
     database
-      .ref("trial").
-      push()
+      .ref("trial")
+      .push()
         .set({jspsych_id: jspsych_id,
           prolific_id: prolific_id,
           timestamp: firebase.database.ServerValue.TIMESTAMP,
@@ -390,7 +390,7 @@ timeline.push(instructions_1,
   // Preloading. For some reason, it appears auto-preloading fails, so using it manually.
   // In principle, it should have ended when participants starts VAAST procedure (which)
   // contains most of the image that have to be pre-loaded.
-  var loading_gif               = ["media/loading.gif"]
+  var loading_gif = ["media/loading.gif"]
 
   jsPsych.pluginAPI.preloadImages(loading_gif);
 
