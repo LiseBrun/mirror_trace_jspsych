@@ -92,7 +92,7 @@ var materials = {
 	var lastRefresh = 0;
 	var currentRefresh = 0;
 
-function do_mirror() {
+function line_tracing() {
 	//load materials
 	var imagePath = materials.file_names[trialnumber];
 	mirror = materials.mirror[trialnumber];
