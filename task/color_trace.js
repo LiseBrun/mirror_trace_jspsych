@@ -66,79 +66,6 @@ var materials = {
 		 			'yends' :   [146,  57, 205, 88, 176, 118,  11,   86, 253, 275, 169,  28,  72,   8,  26,  26, 152, 250,  63,  63, 195, 195, 251, 142,  36,  37, 147,  29, 284, 188, 270,  93,  16,  16, 270, 241,   39, 220,   6,   6,   2,   2, 146, 164]
 		 	}
 
-	// "https://raw.githubusercontent.com/LiseBrun/mirror_trace/master/figures/s0e.png",
-	// "https://raw.githubusercontent.com/LiseBrun/mirror_trace/master/figures/T0h.png",
-	// "https://raw.githubusercontent.com/LiseBrun/mirror_trace/master/figures/T1e.png",
-	// "https://raw.githubusercontent.com/LiseBrun/mirror_trace/master/figures/T1h.png",
-	// "https://raw.githubusercontent.com/LiseBrun/mirror_trace/master/figures/T2e.png",
-	// //5
-	// "https://raw.githubusercontent.com/LiseBrun/mirror_trace/master/figures/T2h.png",
-	// "https://raw.githubusercontent.com/LiseBrun/mirror_trace/master/figures/u10e.png",
-	// "https://raw.githubusercontent.com/LiseBrun/mirror_trace/master/figures/u10h.png",
-	// "https://raw.githubusercontent.com/LiseBrun/mirror_trace/master/figures/u6e.png",
-	// "https://raw.githubusercontent.com/LiseBrun/mirror_trace/master/figures/u6h.png",
-	// //10
-	// "https://raw.githubusercontent.com/LiseBrun/mirror_trace/master/figures/r5e.png",
-	// "https://raw.githubusercontent.com/LiseBrun/mirror_trace/master/figures/r5h.png",
-	// "https://raw.githubusercontent.com/LiseBrun/mirror_trace/master/figures/r2e.png",
-	// "https://raw.githubusercontent.com/LiseBrun/mirror_trace/master/figures/r2h.png",
-	// "https://raw.githubusercontent.com/LiseBrun/mirror_trace/master/figures/q4e.png",
-	// //15
-	// "https://raw.githubusercontent.com/LiseBrun/mirror_trace/master/figures/q4h.png",
-	// "https://raw.githubusercontent.com/LiseBrun/mirror_trace/master/figures/q1e.png",
-	// "https://raw.githubusercontent.com/LiseBrun/mirror_trace/master/figures/q1h.png",
-	// "https://raw.githubusercontent.com/LiseBrun/mirror_trace/master/figures/s15e.png",
-	// "https://raw.githubusercontent.com/LiseBrun/mirror_trace/master/figures/s15h.png",
-	// //20
-	// "https://raw.githubusercontent.com/LiseBrun/mirror_trace/master/figures/s30e.png",
-	// "https://raw.githubusercontent.com/LiseBrun/mirror_trace/master/figures/s30h.png",
-	// "https://raw.githubusercontent.com/LiseBrun/mirror_trace/master/figures/T3e.png",
-	// "https://raw.githubusercontent.com/LiseBrun/mirror_trace/master/figures/T3h.png",
-	// "https://raw.githubusercontent.com/LiseBrun/mirror_trace/master/figures/T4e.png",
-	// //25
-	// "https://raw.githubusercontent.com/LiseBrun/mirror_trace/master/figures/T4h.png",
-	// "https://raw.githubusercontent.com/LiseBrun/mirror_trace/master/figures/T5e.png",
-	// "https://raw.githubusercontent.com/LiseBrun/mirror_trace/master/figures/T5h.png",
-	// "https://raw.githubusercontent.com/LiseBrun/mirror_trace/master/figures/T6e.png",
-	// "https://raw.githubusercontent.com/LiseBrun/mirror_trace/master/figures/T6h.png",
-	// //30
-	// "https://raw.githubusercontent.com/LiseBrun/mirror_trace/master/figures/T7e.png",
-	// "https://raw.githubusercontent.com/LiseBrun/mirror_trace/master/figures/T7h.png",
-	// "https://raw.githubusercontent.com/LiseBrun/mirror_trace/master/figures/T8e.png",
-	// "https://raw.githubusercontent.com/LiseBrun/mirror_trace/master/figures/T8h.png",
-	// "https://raw.githubusercontent.com/LiseBrun/mirror_trace/master/figures/T9e.png",
-	// //35
-	// "https://raw.githubusercontent.com/LiseBrun/mirror_trace/master/figures/T9h.png",
-	// "https://raw.githubusercontent.com/LiseBrun/mirror_trace/master/figures/T10e.png",
-	// "https://raw.githubusercontent.com/LiseBrun/mirror_trace/master/figures/T10h.png",
-	// "https://raw.githubusercontent.com/LiseBrun/mirror_trace/master/figures/T10h.png",
-
-	//	'xstarts' : [65, 32, 35, 333, 95, 145, 35, 207, 172, 241, 46, 290, 210, 16, 158, 92, 51, 360, 325, 41, 55, 309, 317, 139, 278, 149, 284, 361, 359, 360, 305, 305, 67, 198, 52, 52, 35, 35],
-	//'ystarts' : [11, 59, 44, 94, 53, 113, 211, 211, 186, 173, 41, 183, 221, 285, 253, 283, 105, 8, 139, 139, 46, 45, 247, 31, 28, 256, 42, 55, 213, 238, 261, 261, 229, 276, 264, 264, 28, 172],
-	//'xends' :   [214, 298, 333, 35, 245, 95, 207, 35, 241, 172, 290, 46, 16, 210, 92, 158, 41, 325, 309, 55, 360, 51, 228, 218, 179, 247, 88, 164, 71, 71, 47, 47, 187, 317, 310, 310, 249, 249],
-	//'yends' :   [267, 243, 213, 262, 172, 232, 28, 28, 276, 265, 28, 169, 8, 72, 26, 26, 250, 152, 63, 63, 193, 193, 143, 134, 255, 28, 218, 231, 154, 178, 10, 10, 83, 130, 14, 14, 66, 211]
-//}
-
-
-				// "https://raw.githubusercontent.com/LiseBrun/mirror_trace/master/figures/T0e60.png",
-				// "https://raw.githubusercontent.com/LiseBrun/mirror_trace/master/figures/T0e80.png",
-				// "https://raw.githubusercontent.com/LiseBrun/mirror_trace/master/figures/T0e100.png",
-				// "https://raw.githubusercontent.com/LiseBrun/mirror_trace/master/figures/ligne.png",
-				// "https://raw.githubusercontent.com/LiseBrun/mirror_trace/master/figures/ligne10.png"
-
-// 	'xstarts' : [32, 32, 32, 73, 86],
-// 	'ystarts' : [59, 59, 59, 228, 203],
-// 	'xends' :   [299, 299, 299, 326, 292],
-// 	'yends' :   [242, 242, 242, 47, 70]
-// }
-
-	//for saving screenshots
-	// the script can save screenshots of completed trials.
-	// to use this feature, set saveTrace to true and set saveScript to your server.  Your server will need a php script for accepting the files.
-	// the php script is posted on github
-	// var saveScript = "https://calin-jageman.net/mirror_trace/save.php"
-	// var saveTrace = false;
-
 
 	//image dimensions
 	var mywidth = 393;
@@ -499,38 +426,5 @@ function rgbToHex(r, g, b) {
         throw "Invalid color component";
     return ((r << 16) | (g << 8) | b).toString(16);
 }
-
-// function saveCanvas() {
-//
-// 	// Get the canvas screenshot as PNG
-// 	var screenshot = Canvas2Image.saveAsPNG(canvas_mirror, true);
-//
-// 	// This is a little trick to get the SRC attribute from the generated <img> screenshot
-// 	canvas_mirror.parentNode.appendChild(screenshot);
-// 	screenshot.id = "canvasimage";
-// 	data =  screenshot.src;
-// 	canvas_mirror.parentNode.removeChild(screenshot);
-//
-//
-// 	// Send the screenshot to PHP to save it on the server
-// 	var url = saveScript;
-//
-//     jQuery.ajax({
-//
-// 	    type: "POST",
-// 	    url: url,
-// 	    dataType: 'text',
-// 	    data: {
-// 		id : MID,
-// 		trial : trialnumber,
-// 		score : score,
-// 		distance_inline : distance_inline,
-// 		distance_offline : distance_offline,
-// 		timeDiff : timeDiff,
-// 		crossings : crossings,
-// 		base64data : data
-// 	    }
-// 	});
-// }
 
 }
