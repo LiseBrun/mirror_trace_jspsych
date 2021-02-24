@@ -33,7 +33,7 @@ if(!is_compatible) {
     timeline_safari.push(safari_exclusion);
     jsPsych.init({timeline: timeline_safari});
 
-}
+};
 
 // firebase initialization ---------------------------------------------------------------
   var firebase_config = {
@@ -45,7 +45,7 @@ if(!is_compatible) {
   var database = firebase.database();
 
   // id variables of 15 characters
-  var jspsych_id = jsPsych.randomization.randomID(15)
+  var jspsych_id = jsPsych.randomization.randomID(15);
 
   // Preload images
   // var preloadimages = ['figures/s0e.png',
@@ -55,7 +55,7 @@ if(!is_compatible) {
   // This section ensure that we don't lose data. Anytime the
   // client is disconnected, an alert appears onscreen
   var connectedRef = firebase.database().ref(".info/connected");
-  var connection   = firebase.database().ref("line_tracing/" + jspsych_id + "/")
+  var connection   = firebase.database().ref("line_tracing/" + jspsych_id + "/");
   var dialog = undefined;
   var first_connection = true;
 
@@ -150,17 +150,6 @@ if(!is_compatible) {
                timestamp: firebase.database.ServerValue.TIMESTAMP})
   }
 
-// line tracing task trial --------------------------------------------------------------------------
-  var saving_trial = function(){
-    database
-      .ref("trial")
-      .push()
-        .set({jspsych_id: jspsych_id,
-          prolific_id: prolific_id,
-          timestamp: firebase.database.ServerValue.TIMESTAMP,
-          trial: jsPsych.data.get().last(3).json()})
-  }
-
 // browser events -----------------------------------------------------------------------
   var saving_browser_events = function(completion) {
     database
@@ -192,11 +181,6 @@ if(!is_compatible) {
 var save_id = {
     type: 'call-function',
     func: saving_id
-}
-
-var save_trial = {
-    type: 'call-function',
-    func: saving_trial
 }
 
 var save_extra = {
@@ -370,8 +354,6 @@ timeline.push(save_id);
 // line tracing task
 timeline.push(instructions_1,
               instructions_2,
-              // line_tracing,
-              // save_trial,
               instructions_end,
               fullscreen_exit_trial);
 
