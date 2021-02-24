@@ -77,6 +77,10 @@ if(!is_compatible) {
     jsPsych.init({timeline: timeline_error});
     }
 
+    // counter variables
+      var trial_n    = 1;
+      var events_n = 1;
+
 // Saving blocks ------------------------------------------------------------------------
 // Every function here send the data to firebase.io. Because data sent is different
 // according to trial type, there are differents function definition.
