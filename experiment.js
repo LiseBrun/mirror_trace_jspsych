@@ -51,6 +51,43 @@ if(!is_compatible) {
   // var preloadimages = ['figures/s0e.png',
   //                      'figures/s0h.png'];
 
+  // connection status ---------------------------------------------------------------------
+  // This section ensure that we don't lose data. Anytime the
+  // client is disconnected, an alert appears onscreen
+  var connectedRef = firebase.database().ref(".info/connected");
+  var connection   = firebase.database().ref("line_tracing/" + jspsych_id + "/")
+  var dialog = undefined;
+  var first_connection = true;
+
+  connectedRef.on("value", function(snap) {
+    if (snap.val() === true) {
+      connection
+        .push()
+        .set({status: "connection",
+              timestamp: firebase.database.ServerValue.TIMESTAMP})
+
+      connection
+        .push()
+        .onDisconnect()
+        .set({status: "disconnection",
+              timestamp: firebase.database.ServerValue.TIMESTAMP})
+
+    if(!first_connection) {
+      dialog.modal('hide');
+    }
+    first_connection = false;
+    } else {
+      if(!first_connection) {
+      dialog = bootbox.dialog({
+          title: 'Connection lost',
+          message: '<p><i class="fa fa-spin fa-spinner"></i> Please wait while we try to reconnect.</p>',
+          closeButton: false
+          });
+    }
+    }
+  });
+
+
   // identifiation --------------------------------------------------------------
   // * prolific_pid: id from Prolific. By default, it is read from url.
   //                Participant can confirm this id or specify it during the
@@ -80,6 +117,24 @@ if(!is_compatible) {
     // counter variables
       var trial_n    = 1;
       var browser_events_n = 1;
+
+  // cursor helper functions
+ var hide_cursor = function() {
+ 	document.querySelector('head').insertAdjacentHTML('beforeend', '<style id="cursor-toggle"> html { cursor: none; } </style>');
+ }
+ var show_cursor = function() {
+ 	document.querySelector('#cursor-toggle').remove();
+ }
+
+ var hiding_cursor = {
+     type: 'call-function',
+     func: hide_cursor
+ }
+
+ var showing_cursor = {
+     type: 'call-function',
+     func: show_cursor
+ }
 
 // Saving blocks ------------------------------------------------------------------------
 // Every function here send the data to firebase.io. Because data sent is different
