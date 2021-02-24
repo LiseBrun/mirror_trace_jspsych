@@ -11,6 +11,9 @@
       <script src="jspsych-6.3.0/plugins/jspsych-call_function.js"></script>
       <script src="jspsych-6.3.0/plugins/jspsych-html-button-response.js"></script>
       <script src="jspsych-6.3.0/plugins/jspsych-survey-likert.js"></script>
+      <script src="jspsych-6.3.0/plugins/jspsych-fullscreen.js"></script>
+      <script src="jspsych-6.3.0/plugins/jspsych-survey-multi-choice.js"></script>
+      <script src="jspsych-6.3.0/plugins/jspsych-survey-text.js"></script>
       <link href="jspsych-6.3.0/css/jspsych.css" rel="stylesheet" type="text/css">
 
       <!-- Line tracing task -->
@@ -24,15 +27,21 @@
 
   <script>
 
-  /* create timeline */
-      var timeline = [];
+
 
 /* welcome message */
       var welcome = {
         type: "html-keyboard-response",
         stimulus: "Welcome to the experiment. Press any key to begin."
       };
-      timeline.push(welcome);
+
+/* Switching to fullscreen */
+      var fullscreen = {
+        type: 'fullscreen',
+        message: 'To start the study, please switch to fullscreen </br></br>',
+        button_label: 'Switch to fullscreen',
+        fullscreen_mode: true
+      };
 
 /* instructions trial */
       var instructions_1 = {
@@ -45,7 +54,6 @@
           <p>Press any key to begin.</p>
           `,
             };
-      timeline.push(instructions_1);
 
 
       var instructions_2 = {
@@ -60,9 +68,8 @@
           <p>Press any key to begin.</p>
           `,
             };
-      timeline.push(instructions_2);
 
-/* materials */
+/* materials for line tracing task */
 
 var materials = {
 		'mirror' : [false, false, false, false, false],
@@ -79,9 +86,7 @@ var materials = {
   		 			'yends' :   [146,  57, 205, 88, 176]
   		 	}
 
-/* create variables */
-
-//image dimensions
+/* create variables for line tracing task */
         	var mywidth = 393;
         	var myheight = 295;
 
@@ -106,18 +111,6 @@ var materials = {
         	var lastRefresh = 0;
         	var currentRefresh = 0;
 
-        	// click on "enter" when they want to finish the trial
-        	var press_enter = false;
-        	addEventListener("keyup", function(event) {
-        	 if (event.key === "Enter") {
-        		 drawing = false;
-        		 finished = true;
-        		 //document.getElementById("status").innerHTML = "Finished with score = " + Math.round(score *100) + "%<BR> Click next to continue.";
-        		 // document.getElementById("status").innerHTML = "Vous avez terminé cet essai. Cliquez sur la flèche à droite pour continuer.";
-        	 }
-         });
-
-
 /* display canvas */
 
       var display_canvas = {
@@ -133,7 +126,6 @@ var materials = {
         <p>Press any key to begin.</p>
         `,
       };
-        timeline.push(display_canvas);
 
 /* Line tracing task */
 
@@ -472,16 +464,16 @@ var materials = {
 
         timeline.push(line_tracing);
 
+*/
+
 
 /* two alternative force choice */
-
     var twoafc = {
       type: 'html-button-response',
       stimulus: '<p>Which one is your score?</p>',
       choices: ['Score', 'Score  + 10%'],
       prompt: "<p></p>"
     };
-    timeline.push(twoafc);
 
 
 /* confidence scale */
@@ -500,13 +492,83 @@ var materials = {
       {prompt: "How confident are you in your response?", labels: scale}
       ]
     };
-    timeline.push(confidence);
+
+/* trail block */
+    var test_block = {
+      timeline: [
+        display_canvas,
+        twoafc,
+        confidence
+      ],
+    };
 
 
-      /* start the experiment */
+/*End of the line tracing task*/
+
+    var end_task = {
+      type: "html-keyboard-response",
+      stimulus: `
+        <p>The line tracing task is now completed.</p>
+        <p>We will now ask you some demographic questions.</p>
+        `,
+    };
+
+
+/* Demographic questions*/
+
+    var age = {
+       type: 'survey-text',
+       questions: [{prompt: "How old are you?"}],
+     };
+
+    var sex = {
+     type: 'survey-multi-choice',
+     questions: [{prompt: "Please indicate your sex:", options: ["Male", "Female", "Other"], required: true, horizontal: true}],
+     };
+
+
+    var comments = {
+        type: 'survey-text',
+        questions: [{prompt: "Do you have comments regarding this study? [Optional]"}],
+      };
+
+/*End of full screen*/
+
+        var fullscreen_exit = {
+            type: 'fullscreen',
+            fullscreen_mode: false
+          };
+
+/*End of study*/
+
+    var ending = {
+        type: "html-keyboard-response",
+        stimulus: "This study is over. We thank you for participating in this study.
+                  In this study, we were interested in ..."
+      };
+
+
+/* create timeline */
+    var timeline = [];
+    timeline.push(welcome,
+                  fullscreen,
+                  instructions_1,
+                  instructions_2,
+                  trial_block,
+                  end_task,
+                  age,
+                  sex,
+                  comments,
+                  fullscreen_exit,
+                  ending);
+
+
+  /* start the experiment */
       jsPsych.init({
         timeline: timeline
         });
+
+
 
    </script>
 </html>
