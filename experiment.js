@@ -310,13 +310,13 @@ timeline.push(welcome,
               fullscreen_trial);
 
 // prolific verification
-timeline.push(save_id);
+// timeline.push(save_id);
 
 // line tracing task
 timeline.push(instructions_1,
               instructions_2,
-              line_tracing,
-              save_trial,
+              // line_tracing,
+              // save_trial,
               instructions_end);
 
  // demographic questions
@@ -324,7 +324,7 @@ timeline.push(instructions_1,
                 extra_information_2,
                 extra_information_3,
                 extra_information_4,
-                save_extra);
+                // save_extra);
 
   // ending
   timeline.push(ending);
