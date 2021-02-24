@@ -493,16 +493,6 @@ var materials = {
       ]
     };
 
-/* trail block */
-    var test_block = {
-      timeline: [
-        display_canvas,
-        twoafc,
-        confidence
-      ],
-    };
-
-
 /*End of the line tracing task*/
 
     var end_task = {
@@ -510,6 +500,7 @@ var materials = {
       stimulus: `
         <p>The line tracing task is now completed.</p>
         <p>We will now ask you some demographic questions.</p>
+        <p>Press any key to begin.</p>
         `,
     };
 
@@ -543,8 +534,7 @@ var materials = {
 
     var ending = {
         type: "html-keyboard-response",
-        stimulus: "This study is over. We thank you for participating in this study.
-                  In this study, we were interested in ..."
+        stimulus: "This study is over. We thank you for participating in this study. In this study, we were interested in ..."
       };
 
 
@@ -554,7 +544,9 @@ var materials = {
                   fullscreen,
                   instructions_1,
                   instructions_2,
-                  trial_block,
+                  display_canvas,
+                  twoafc,
+                  confidence,
                   end_task,
                   age,
                   sex,
