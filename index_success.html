@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Study on Line Tracing Task | LPNC</title>
+
+        <!-- jsPsych core library and plugins -->
+      <script src="jspsych-6.3.0/jspsych.js"></script>
+      <script src="jspsych-6.3.0/plugins/jspsych-html-keyboard-response.js"></script>
+      <script src="jspsych-6.3.0/plugins/jspsych-image-keyboard-response.js"></script>
+      <script src="jspsych-6.3.0/plugins/jspsych-preload.js"></script>
+      <script src="jspsych-6.3.0/plugins/jspsych-call_function.js"></script>
+      <script src="jspsych-6.3.0/plugins/jspsych-html-button-response.js"></script>
+      <script src="jspsych-6.3.0/plugins/jspsych-survey-likert.js"></script>
+      <script src="jspsych-6.3.0/plugins/jspsych-fullscreen.js"></script>
+      <script src="jspsych-6.3.0/plugins/jspsych-survey-multi-choice.js"></script>
+      <script src="jspsych-6.3.0/plugins/jspsych-survey-text.js"></script>
+      <script src="jspsych-line-tracing.js"></script>
+      <link href="jspsych-6.3.0/css/jspsych.css" rel="stylesheet" type="text/css">
+
+      <!-- Line tracing task -->
+      <script src="task/base64.js" type="text/javascript"></script>
+      <script src="task/canvas2image.js" type="text/javascript"></script>
+      <script src="task/jquery.js" type="text/javascript"></script>
+      <script src="task/color_trace.js" type="text/javascript"></script>
+
+  </head>
+  <body></body>
+
+  <script>
+
+
+
+/* welcome message */
+      var welcome = {
+        type: "html-keyboard-response",
+        stimulus: "Welcome to the experiment. Press any key to begin."
+      };
+
+/* Switching to fullscreen */
+      var fullscreen = {
+        type: 'fullscreen',
+        message: 'To start the study, please switch to fullscreen </br></br>',
+        button_label: 'Switch to fullscreen',
+        fullscreen_mode: true
+      };
+
+/* instructions trial */
+      var instructions_1 = {
+          type: "html-keyboard-response",
+          stimulus: `
+          <p>In this task, you will have to reproduce a figure with your mouse.</p>
+          <p>In each trial, you will see two rectangular panels: the drawing panel
+          is at the bottom; this is where you will move the mouse cursor; the
+          figure panel is at the top, this is where you will see the figure to reproduce.</p>
+          <p>Press any key to begin.</p>
+          `,
+            };
+
+
+      var instructions_2 = {
+          type: "html-keyboard-response",
+          stimulus: `
+          <p>To begin a trial, move the mouse so that your cursor rests over
+          the green circle in the drawing panel.</p><p>Then click the left
+          mouse button to signal that you are ready to begin.</p><p> Once the
+          trial begins, a red target circle appears in the mirror panel.</p>
+          <p>Trace the figure working from the starting point towards the red target circle.</p>
+          <p>The trial ends automatically when you reach the red circle.</p>
+          <p>Press any key to begin.</p>
+          `,
+            };
+
+
+/* display canvas */
+
+      var display_canvas = {
+        type: "jspsych-line-tracing",
+        figure_number: 10,
+        stimulus: ` <p>stimulus</p>
+        `,
+        prompt: '<p>Press "y" key to begin.</p>',
+        choices: ['y'],
+      };
+
+/* Line tracing task */
+
+
+
+/* two alternative force choice */
+    var twoafc = {
+      type: 'html-button-response',
+      stimulus: '<p>Which one is your score?</p>',
+      choices: ['Score', 'Score  + 10%'],
+      prompt: "<p></p>"
+    };
+
+
+/* confidence scale */
+    var scale = [
+      "50 - I guess the answer ",
+      "60",
+      "70",
+      "80",
+      "90",
+      "100 - I'm very confident in my answer"
+    ];
+
+    var confidence = {
+      type: 'survey-likert',
+      questions: [
+      {prompt: "How confident are you in your response?", labels: scale}
+      ]
+    };
+
+/*End of the line tracing task*/
+
+    var end_task = {
+      type: "html-keyboard-response",
+      stimulus: `
+        <p>The line tracing task is now completed.</p>
+        <p>We will now ask you some demographic questions.</p>
+        <p>Press any key to begin.</p>
+        `,
+    };
+
+
+/* Demographic questions*/
+
+    var age = {
+       type: 'survey-text',
+       questions: [{prompt: "How old are you?"}],
+     };
+
+    var sex = {
+     type: 'survey-multi-choice',
+     questions: [{prompt: "Please indicate your sex:", options: ["Male", "Female", "Other"], required: true, horizontal: true}],
+     };
+
+
+    var comments = {
+        type: 'survey-text',
+        questions: [{prompt: "Do you have comments regarding this study? [Optional]"}],
+      };
+
+/*End of full screen*/
+
+        var fullscreen_exit = {
+            type: 'fullscreen',
+            fullscreen_mode: false
+          };
+
+/*End of study*/
+
+    var ending = {
+        type: "html-keyboard-response",
+        stimulus: "This study is over. We thank you for participating in this study. In this study, we were interested in ..."
+      };
+
+
+/* create timeline */
+    var timeline = [];
+    timeline.push(welcome,
+                  // fullscreen,
+                  instructions_1,
+                  instructions_2,
+                  display_canvas,
+                  twoafc,
+                  confidence,
+                  end_task,
+                  age,
+                  sex,
+                  comments,
+                  fullscreen_exit,
+                  ending);
+
+
+  /* start the experiment */
+      jsPsych.init({
+        timeline: timeline,
+        on_finish: function(){
+          jsPsych.data.displayData();
+        }
+        });
+
+
+
+   </script>
+</html>
